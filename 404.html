@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>スマホ修理受付 英会話</title>
+<style>
+:root{
+  --bg:#0b1220;
+  --panel:#111a2b;
+  --panel2:#17233a;
+  --text:#f4f7fb;
+  --muted:#9fb0c8;
+  --accent:#55a7ff;
+  --accent2:#7cc0ff;
+  --line:#263653;
+  --warn:#ffcc66;
+  --ok:#7ed6a4;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP",sans-serif;
+  background:linear-gradient(180deg,#08101c,#0d1524 30%,#0b1220);
+  color:var(--text);
+  line-height:1.65;
+}
+header{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:rgba(8,16,28,.94);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  max-width:980px;
+  margin:auto;
+  padding:16px;
+}
+h1{
+  margin:0 0 6px;
+  font-size:clamp(22px,5vw,34px);
+}
+.subtitle{
+  color:var(--muted);
+  font-size:14px;
+}
+.search-wrap{
+  margin-top:14px;
+}
+input[type="search"]{
+  width:100%;
+  padding:13px 14px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:#0d1728;
+  color:var(--text);
+  font-size:16px;
+  outline:none;
+}
+input[type="search"]:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px rgba(85,167,255,.12);
+}
+main{
+  max-width:980px;
+  margin:auto;
+  padding:18px 16px 48px;
+}
+.notice{
+  background:rgba(255,204,102,.08);
+  border:1px solid rgba(255,204,102,.25);
+  color:#ffe7ab;
+  padding:14px 16px;
+  border-radius:14px;
+  margin-bottom:18px;
+}
+.section{
+  margin:22px 0;
+}
+.section h2{
+  font-size:20px;
+  margin:0 0 12px;
+  padding-left:10px;
+  border-left:4px solid var(--accent);
+}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:12px;
+}
+.card{
+  background:linear-gradient(180deg,var(--panel2),var(--panel));
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:14px;
+  box-shadow:0 8px 20px rgba(0,0,0,.12);
+}
+.scene{
+  font-size:12px;
+  color:var(--accent2);
+  font-weight:700;
+  letter-spacing:.04em;
+  margin-bottom:6px;
+}
+.en{
+  font-size:18px;
+  font-weight:800;
+  line-height:1.35;
+}
+.kana{
+  color:#d7e7fb;
+  margin-top:6px;
+  font-size:14px;
+  font-weight:600;
+}
+.jp{
+  color:var(--muted);
+  margin-top:5px;
+}
+.tag{
+  display:inline-block;
+  margin-top:10px;
+  padding:3px 8px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  color:#b9c8dc;
+  font-size:12px;
+}
+.priority{
+  border-color:rgba(85,167,255,.55);
+}
+.priority .tag{
+  color:#d8ecff;
+  border-color:rgba(85,167,255,.45);
+}
+.note{
+  margin-top:10px;
+  font-size:13px;
+  color:#d9e3f0;
+  background:rgba(255,255,255,.03);
+  padding:10px 12px;
+  border-radius:10px;
+}
+footer{
+  max-width:980px;
+  margin:auto;
+  padding:0 16px 36px;
+  color:var(--muted);
+  font-size:13px;
+}
+.hidden{display:none !important}
+.empty{
+  display:none;
+  text-align:center;
+  color:var(--muted);
+  padding:30px 10px;
+}
+@media (max-width:640px){
+  .cards{grid-template-columns:1fr}
+  .en{font-size:19px}
+  main{padding-top:14px}
+}
+
+.install-bar{
+  display:none;
+  margin-top:12px;
+}
+.install-btn{
+  width:100%;
+  border:0;
+  border-radius:12px;
+  padding:12px 14px;
+  background:#2f8cff;
+  color:#fff;
+  font-size:15px;
+  font-weight:800;
+  cursor:pointer;
+}
+.install-btn:active{transform:translateY(1px)}
+.install-note{
+  margin-top:7px;
+  color:var(--muted);
+  font-size:12px;
+}
+
+</style>
+<meta name="theme-color" content="#0b47c9" />
+<link rel="manifest" href="./manifest.webmanifest" />
+<link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="./icon-512.png" />
+<link rel="apple-touch-icon" href="./icon-192.png" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="apple-mobile-web-app-title" content="修理英会話" />
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <h1>スマホ修理受付スタッフ用 英会話</h1>
+    <div class="subtitle">店頭でそのまま使える、短く自然な英語フレーズ集 / Chromeでアプリとしてインストール対応</div>
+    <div class="search-wrap">
+      <input id="search" type="search" placeholder="例：バッテリー / 修理料金 / backup / screen" aria-label="フレーズ検索">
+    </div>
+
+    <div id="installBar" class="install-bar">
+      <button id="installBtn" class="install-btn" type="button">アプリとしてインストール</button>
+      <div class="install-note">Chromeのインストール機能が利用できる場合に表示されます。</div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="notice">
+    <strong>重要：</strong>
+    診断前に修理可否・料金・所要時間を断定しすぎないこと。パスコードは可能な限り直接聞かず、お客様本人にロック解除をお願いする表現を優先します。<br>
+    <small>カタカナ発音は目安です。英語の音を完全には再現できません。</small>
+  </div>
+
+  <section class="section">
+    <h2>最優先15フレーズ</h2>
+    <div class="cards">
+      <div class="card priority"><div class="scene">来店</div><div class="en">Hi. How can I help?</div><div class="kana">ハイ。ハウ キャナイ ヘルプ？</div><div class="jp">こんにちは。どうされましたか？</div><span class="tag">必須</span></div>
+      <div class="card priority"><div class="scene">症状確認</div><div class="en">What's wrong with your phone?</div><div class="kana">ワッツ ロング ウィズ ユア フォウン？</div><div class="jp">スマホはどうされましたか？</div><span class="tag">必須</span></div>
+      <div class="card priority"><div class="scene">機種確認</div><div class="en">What model is it?</div><div class="kana">ワット モデル イズ イット？</div><div class="jp">機種は何ですか？</div><span class="tag">必須</span></div>
+      <div class="card priority"><div class="scene">発生時期</div><div class="en">When did it start?</div><div class="kana">ウェン ディド イット スタート？</div><div class="jp">いつから症状が出ましたか？</div><span class="tag">必須</span></div>
+      <div class="card priority"><div class="scene">電源</div><div class="en">Does it turn on?</div><div class="kana">ダズ イット ターン オン？</div><div class="jp">電源は入りますか？</div><span class="tag">必須</span></div>
+      <div class="card priority"><div class="scene">充電</div><div class="en">Does it charge?</div><div class="kana">ダズ イット チャージ？</div><div class="jp">充電できますか？</div><span class="tag">必須</span></div>
+      <div class="card priority"><div class="scene">落下</div><div class="en">Did you drop it?</div><div class="kana">ディジュー ドロップ イット？</div><div class="jp">スマホを落としましたか？</div><span class="tag">必須</span></div>
+      <div class="card priority"><div class="scene">水濡れ</div><div class="en">Did it get wet?</div><div class="kana">ディド イット ゲット ウェット？</div><div class="jp">水に濡れたことはありますか？</div><span class="tag">必須</span></div>
+      <div class="card priority"><div class="scene">端末確認</div><div class="en">May I check your phone?</div><div class="kana">メイ アイ チェック ユア フォウン？</div><div class="jp">スマホを確認してもよろしいですか？</div><span class="tag">必須</span></div>
+      <div class="card priority"><div class="scene">ロック解除</div><div class="en">Could you unlock it?</div><div class="kana">クッジュー アンロック イット？</div><div class="jp">ロックを解除していただけますか？</div><span class="tag">必須</span></div>
+      <div class="card priority"><div class="scene">バックアップ</div><div class="en">Do you have a backup?</div><div class="kana">ドゥー ユー ハヴァ バックアップ？</div><div class="jp">データのバックアップはありますか？</div><span class="tag">必須</span></div>
+      <div class="card priority"><div class="scene">診断</div><div class="en">We need to check it first.</div><div class="kana">ウィー ニード トゥ チェック イット ファースト。</div><div class="jp">まず端末を確認する必要があります。</div><span class="tag">必須</span></div>
+      <div class="card priority"><div class="scene">料金</div><div class="en">It'll be about ___ yen.</div><div class="kana">イトゥル ビー アバウト ○○ イェン。</div><div class="jp">修理料金の見積もりは○円です。</div><span class="tag">必須</span></div>
+      <div class="card priority"><div class="scene">時間</div><div class="en">It'll take about ___ minutes.</div><div class="kana">イトゥル テイク アバウト ○○ ミニッツ。</div><div class="jp">約○分の予定です。</div><span class="tag">必須</span></div>
+      <div class="card priority"><div class="scene">修理同意</div><div class="en">Would you like us to repair it?</div><div class="kana">ウッジュー ライク アス トゥ リペア イット？</div><div class="jp">修理を進めてもよろしいですか？</div><span class="tag">必須</span></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>1. 来店・基本確認</h2>
+    <div class="cards">
+      <div class="card"><div class="scene">iPhone確認</div><div class="en">Which iPhone is it?</div><div class="kana">ウィッチ アイフォウン イズ イット？</div><div class="jp">iPhoneのどの機種ですか？</div></div>
+      <div class="card"><div class="scene">Android確認</div><div class="en">What Android model is it?</div><div class="kana">ワット アンドロイド モデル イズ イット？</div><div class="jp">Androidの機種は何ですか？</div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>2. 症状の確認</h2>
+    <div class="cards">
+      <div class="card"><div class="scene">画面割れ</div><div class="en">Is the screen cracked?</div><div class="kana">イズ ザ スクリーン クラックト？</div><div class="jp">画面は割れていますか？</div></div>
+      <div class="card"><div class="scene">タッチ</div><div class="en">Does the screen respond?</div><div class="kana">ダズ ザ スクリーン リスポンド？</div><div class="jp">タッチ操作はできますか？</div></div>
+      <div class="card"><div class="scene">バッテリー</div><div class="en">Does the battery drain fast?</div><div class="kana">ダズ ザ バッテリー ドレイン ファスト？</div><div class="jp">バッテリーの減りは早いですか？</div></div>
+      <div class="card"><div class="scene">カメラ</div><div class="en">Does the camera work?</div><div class="kana">ダズ ザ カメラ ワーク？</div><div class="jp">カメラは正常に動きますか？</div></div>
+      <div class="card"><div class="scene">スピーカー</div><div class="en">Does the speaker work?</div><div class="kana">ダズ ザ スピーカー ワーク？</div><div class="jp">スピーカーから音は出ますか？</div></div>
+      <div class="card"><div class="scene">マイク</div><div class="en">Does the mic work?</div><div class="kana">ダズ ザ マイク ワーク？</div><div class="jp">マイクは使えますか？</div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>3. 端末の確認</h2>
+    <div class="cards">
+      <div class="card"><div class="scene">ケース</div><div class="en">Please remove the case.</div><div class="kana">プリーズ リムーヴ ザ ケース。</div><div class="jp">ケースを外していただけますか？</div></div>
+      <div class="card"><div class="scene">SIM</div><div class="en">You may need to remove the SIM.</div><div class="kana">ユー メイ ニード トゥ リムーヴ ザ シム。</div><div class="jp">必要な場合はSIMカードを外していただくことがあります。</div></div>
+      <div class="card"><div class="scene">テスト</div><div class="en">We need to test it.</div><div class="kana">ウィー ニード トゥ テスト イット。</div><div class="jp">いくつかの機能を確認します。</div></div>
+      <div class="card"><div class="scene">ロック解除</div><div class="en">We may need you to unlock it.</div><div class="kana">ウィー メイ ニード ユー トゥ アンロック イット。</div><div class="jp">動作確認のため、ロック解除をお願いする場合があります。</div><div class="note">原則としてパスコードそのものを聞くより、お客様本人に解除してもらう。</div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>4. データ・バックアップ</h2>
+    <div class="cards">
+      <div class="card"><div class="scene">推奨</div><div class="en">If possible, back up your data.</div><div class="kana">イフ ポッシブル、バックアップ ユア デイタ。</div><div class="jp">可能なら、修理前にデータをバックアップしてください。</div></div>
+      <div class="card"><div class="scene">データ消失</div><div class="en">Data may be lost during repair.</div><div class="kana">デイタ メイ ビー ロスト デューリング リペア。</div><div class="jp">修理内容によってはデータが失われる可能性があります。</div></div>
+      <div class="card"><div class="scene">初期化</div><div class="en">We may need to reset the phone.</div><div class="kana">ウィー メイ ニード トゥ リセット ザ フォウン。</div><div class="jp">修理中に端末の初期化が必要になる場合があります。</div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>5. 診断・修理可否</h2>
+    <div class="cards">
+      <div class="card"><div class="scene">診断</div><div class="en">We need to check it first.</div><div class="kana">ウィー ニード トゥ チェック イット ファースト。</div><div class="jp">まず診断を行う必要があります。</div></div>
+      <div class="card"><div class="scene">修理できそう</div><div class="en">We should be able to repair it.</div><div class="kana">ウィー シュッド ビー エイブル トゥ リペア イット。</div><div class="jp">修理できそうです。</div></div>
+      <div class="card"><div class="scene">確認後判断</div><div class="en">We'll know after we check it.</div><div class="kana">ウィール ノウ アフター ウィー チェック イット。</div><div class="jp">点検後に詳しいことが分かります。</div></div>
+      <div class="card"><div class="scene">修理不可</div><div class="en">Sorry, we can't repair it.</div><div class="kana">ソーリー、ウィー キャント リペア イット。</div><div class="jp">申し訳ありませんが、この端末は修理できません。</div></div>
+      <div class="card"><div class="scene">水没・水濡れ</div><div class="en">We can't repair water-damaged phones.</div><div class="kana">ウィー キャント リペア ウォーター ダメージド フォウンズ。</div><div class="jp">申し訳ありませんが、水没・水濡れした端末は修理できません。</div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>6. 部品在庫</h2>
+    <div class="cards">
+      <div class="card"><div class="scene">在庫確認</div><div class="en">Let me check the stock.</div><div class="kana">レット ミー チェック ザ ストック。</div><div class="jp">部品の在庫を確認します。</div></div>
+      <div class="card"><div class="scene">在庫あり</div><div class="en">The part is in stock.</div><div class="kana">ザ パート イズ イン ストック。</div><div class="jp">部品の在庫があります。</div></div>
+      <div class="card"><div class="scene">在庫なし</div><div class="en">The part is out of stock.</div><div class="kana">ザ パート イズ アウト オブ ストック。</div><div class="jp">現在、部品の在庫がありません。</div></div>
+      <div class="card"><div class="scene">在庫切れで修理不可</div><div class="en">We can't repair it now. The part is out of stock.</div><div class="kana">ウィー キャント リペア イット ナウ。ザ パート イズ アウト オブ ストック。</div><div class="jp">申し訳ありませんが、パーツの在庫がないため現在は修理できません。</div></div>
+      <div class="card"><div class="scene">取り寄せ</div><div class="en">We need to order the part.</div><div class="kana">ウィー ニード トゥ オーダー ザ パート。</div><div class="jp">部品を取り寄せる必要があります。</div></div>
+      <div class="card"><div class="scene">入荷予定</div><div class="en">It should arrive in about ___ days.</div><div class="kana">イット シュッド アライヴ イン アバウト ○○ デイズ。</div><div class="jp">部品は約○日で入荷予定です。</div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>7. 料金説明</h2>
+    <div class="cards">
+      <div class="card"><div class="scene">概算</div><div class="en">It'll be about ___ yen.</div><div class="kana">イトゥル ビー アバウト ○○ イェン。</div><div class="jp">約○円かかります。</div></div>
+      <div class="card"><div class="scene">見積もり</div><div class="en">This is an estimate.</div><div class="kana">ディス イズ アン エスティメット。</div><div class="jp">これは概算です。</div></div>
+      <div class="card"><div class="scene">追加故障</div><div class="en">The price may change if we find more damage.</div><div class="kana">ザ プライス メイ チェインジ イフ ウィー ファインド モア ダメージ。</div><div class="jp">他の故障が見つかった場合、料金が変わる可能性があります。</div></div>
+      <div class="card"><div class="scene">追加作業</div><div class="en">We'll contact you before any extra work.</div><div class="kana">ウィール コンタクト ユー ビフォア エニー エクストラ ワーク。</div><div class="jp">追加作業を行う前にご連絡します。</div><div class="note">店舗が実際にこの運用をしている場合のみ使用。</div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>8. 修理時間</h2>
+    <div class="cards">
+      <div class="card"><div class="scene">1時間</div><div class="en">It'll take about an hour.</div><div class="kana">イトゥル テイク アバウト アン アワー。</div><div class="jp">修理は約1時間の予定です。</div></div>
+      <div class="card"><div class="scene">30分</div><div class="en">It'll take about 30 minutes.</div><div class="kana">イトゥル テイク アバウト サーティ ミニッツ。</div><div class="jp">約30分の予定です。</div></div>
+      <div class="card"><div class="scene">当日</div><div class="en">It should be ready today.</div><div class="kana">イット シュッド ビー レディ トゥデイ。</div><div class="jp">本日中に完了する予定です。</div></div>
+      <div class="card"><div class="scene">一晩預かり</div><div class="en">We need to keep it overnight.</div><div class="kana">ウィー ニード トゥ キープ イット オーヴァーナイト。</div><div class="jp">一晩お預かりする必要があります。</div></div>
+      <div class="card"><div class="scene">完成予定</div><div class="en">It should be ready by ___.</div><div class="kana">イット シュッド ビー レディ バイ ○○。</div><div class="jp">○時／○日までに完成する予定です。</div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>9. 修理受付</h2>
+    <div class="cards">
+      <div class="card"><div class="scene">同意</div><div class="en">Is that okay?</div><div class="kana">イズ ザット オウケイ？</div><div class="jp">よろしいですか？</div></div>
+      <div class="card"><div class="scene">申込書</div><div class="en">Please fill this out.</div><div class="kana">プリーズ フィル ディス アウト。</div><div class="jp">こちらの用紙にご記入ください。</div></div>
+      <div class="card"><div class="scene">名前</div><div class="en">Your name, please.</div><div class="kana">ユア ネイム、プリーズ。</div><div class="jp">お名前をお願いします。</div></div>
+      <div class="card"><div class="scene">電話番号</div><div class="en">Your phone number, please.</div><div class="kana">ユア フォウン ナンバー、プリーズ。</div><div class="jp">電話番号をお願いします。</div></div>
+      <div class="card"><div class="scene">連絡方法</div><div class="en">How should we contact you?</div><div class="kana">ハウ シュッド ウィー コンタクト ユー？</div><div class="jp">どの方法でご連絡しましょうか？</div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>10. 修理完了・返却</h2>
+    <div class="cards">
+      <div class="card"><div class="scene">完了</div><div class="en">Your phone is ready.</div><div class="kana">ユア フォウン イズ レディ。</div><div class="jp">修理が完了しました。</div></div>
+      <div class="card"><div class="scene">画面交換</div><div class="en">We replaced the screen.</div><div class="kana">ウィー リプレイスト ザ スクリーン。</div><div class="jp">画面を交換しました。</div></div>
+      <div class="card"><div class="scene">バッテリー交換</div><div class="en">We replaced the battery.</div><div class="kana">ウィー リプレイスト ザ バッテリー。</div><div class="jp">バッテリーを交換しました。</div></div>
+      <div class="card"><div class="scene">動作確認</div><div class="en">Please check that it works.</div><div class="kana">プリーズ チェック ザット イット ワークス。</div><div class="jp">正常に動作するかご確認ください。</div></div>
+      <div class="card"><div class="scene">最終確認</div><div class="en">Is everything okay?</div><div class="kana">イズ エヴリシング オウケイ？</div><div class="jp">問題なく動いていますか？</div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>11. 支払い</h2>
+    <div class="cards">
+      <div class="card"><div class="scene">合計</div><div class="en">It's ___ yen.</div><div class="kana">イッツ ○○ イェン。</div><div class="jp">合計○円です。</div></div>
+      <div class="card"><div class="scene">支払い方法</div><div class="en">How would you like to pay?</div><div class="kana">ハウ ウッド ユー ライク トゥ ペイ？</div><div class="jp">お支払い方法はいかがなさいますか？</div></div>
+      <div class="card"><div class="scene">利用可能方法</div><div class="en">You can pay by ___.</div><div class="kana">ユー キャン ペイ バイ ○○。</div><div class="jp">○○でお支払いいただけます。</div></div>
+      <div class="card"><div class="scene">レシート</div><div class="en">Do you need a receipt?</div><div class="kana">ドゥー ユー ニード ア リスィート？</div><div class="jp">レシートは必要ですか？</div></div>
+      <div class="card"><div class="scene">レジ案内</div><div class="en">Please pay at that register.</div><div class="kana">プリーズ ペイ アット ザット レジスター。</div><div class="jp">レジはあちらで決済をお願いします。</div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>12. 最後の挨拶</h2>
+    <div class="cards">
+      <div class="card"><div class="scene">お見送り</div><div class="en">Thank you. Have a nice day.</div><div class="kana">サンキュー。ハヴァ ナイス デイ。</div><div class="jp">ありがとうございました。良い一日を。</div></div>
+    </div>
+  </section>
+
+  <div id="empty" class="empty">該当するフレーズが見つかりません。</div>
+</main>
+
+<footer>
+  店舗ごとの保証規定・データ取扱い・支払い方法・連絡ルールに合わせて調整してください。
+</footer>
+
+<script>
+const input = document.getElementById('search');
+const cards = [...document.querySelectorAll('.card')];
+const sections = [...document.querySelectorAll('.section')];
+const empty = document.getElementById('empty');
+
+function filterCards() {
+  const q = input.value.trim().toLowerCase();
+  let visibleCount = 0;
+
+  cards.forEach(card => {
+    const text = card.innerText.toLowerCase();
+    const show = !q || text.includes(q);
+    card.classList.toggle('hidden', !show);
+    if (show) visibleCount++;
+  });
+
+  sections.forEach(section => {
+    const anyVisible = [...section.querySelectorAll('.card')].some(card => !card.classList.contains('hidden'));
+    section.classList.toggle('hidden', !anyVisible);
+  });
+
+  empty.style.display = visibleCount ? 'none' : 'block';
+}
+
+input.addEventListener('input', filterCards);
+</script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('./service-worker.js');
+  });
+}
+</script>
+
+<script id="pwa-install-script">
+let deferredInstallPrompt = null;
+const installBar = document.getElementById('installBar');
+const installBtn = document.getElementById('installBtn');
+
+function isStandalone() {
+  return window.matchMedia('(display-mode: standalone)').matches ||
+         window.navigator.standalone === true;
+}
+
+window.addEventListener('beforeinstallprompt', (event) => {
+  event.preventDefault();
+  deferredInstallPrompt = event;
+  if (!isStandalone()) installBar.style.display = 'block';
+});
+
+installBtn?.addEventListener('click', async () => {
+  if (!deferredInstallPrompt) return;
+  deferredInstallPrompt.prompt();
+  await deferredInstallPrompt.userChoice;
+  deferredInstallPrompt = null;
+  installBar.style.display = 'none';
+});
+
+window.addEventListener('appinstalled', () => {
+  deferredInstallPrompt = null;
+  installBar.style.display = 'none';
+});
+
+if (isStandalone()) {
+  installBar.style.display = 'none';
+}
+</script>
+
+</body>
+</html>
