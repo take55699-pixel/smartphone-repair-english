@@ -163,27 +163,6 @@ footer{
   main{padding-top:14px}
 }
 
-.install-bar{
-  display:none;
-  margin-top:12px;
-}
-.install-btn{
-  width:100%;
-  border:0;
-  border-radius:12px;
-  padding:12px 14px;
-  background:#2f8cff;
-  color:#fff;
-  font-size:15px;
-  font-weight:800;
-  cursor:pointer;
-}
-.install-btn:active{transform:translateY(1px)}
-.install-note{
-  margin-top:7px;
-  color:var(--muted);
-  font-size:12px;
-}
 
 </style>
 <meta name="theme-color" content="#0b47c9" />
@@ -200,14 +179,9 @@ footer{
 <header>
   <div class="header-inner">
     <h1>スマホ修理受付スタッフ用 英会話</h1>
-    <div class="subtitle">店頭でそのまま使える、短く自然な英語フレーズ集 / Chromeでアプリとしてインストール対応</div>
+    <div class="subtitle">店頭でそのまま使える、短く自然な英語フレーズ集</div>
     <div class="search-wrap">
       <input id="search" type="search" placeholder="例：バッテリー / 修理料金 / backup / screen" aria-label="フレーズ検索">
-    </div>
-
-    <div id="installBar" class="install-bar">
-      <button id="installBtn" class="install-btn" type="button">アプリとしてインストール</button>
-      <div class="install-note">Chromeのインストール機能が利用できる場合に表示されます。</div>
     </div>
   </div>
 </header>
@@ -405,39 +379,6 @@ if ('serviceWorker' in navigator) {
 }
 </script>
 
-<script id="pwa-install-script">
-let deferredInstallPrompt = null;
-const installBar = document.getElementById('installBar');
-const installBtn = document.getElementById('installBtn');
-
-function isStandalone() {
-  return window.matchMedia('(display-mode: standalone)').matches ||
-         window.navigator.standalone === true;
-}
-
-window.addEventListener('beforeinstallprompt', (event) => {
-  event.preventDefault();
-  deferredInstallPrompt = event;
-  if (!isStandalone()) installBar.style.display = 'block';
-});
-
-installBtn?.addEventListener('click', async () => {
-  if (!deferredInstallPrompt) return;
-  deferredInstallPrompt.prompt();
-  await deferredInstallPrompt.userChoice;
-  deferredInstallPrompt = null;
-  installBar.style.display = 'none';
-});
-
-window.addEventListener('appinstalled', () => {
-  deferredInstallPrompt = null;
-  installBar.style.display = 'none';
-});
-
-if (isStandalone()) {
-  installBar.style.display = 'none';
-}
-</script>
 
 </body>
 </html>
