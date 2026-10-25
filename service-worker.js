@@ -1,4 +1,4 @@
-const CACHE_NAME = 'repair-english-github-pages-v4';
+const CACHE_NAME = 'repair-english-github-pages-v5';
 const APP_SHELL = [
   './',
   './index.html',
